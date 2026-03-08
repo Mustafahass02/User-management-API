@@ -106,7 +106,7 @@ public class UserControllerTest {
 
         when(service.deleteUser(any(User_request.class))).thenReturn(true);
 
-        mockMvc.perform(delete("users/deleteuser")
+        mockMvc.perform(delete("/users/deleteuser")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isNoContent());
